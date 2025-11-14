@@ -7777,6 +7777,17 @@ namespace CT90
 
                     }
 
+                    //2025-10-01 LSH : Malaria 체크 추가.
+                    filterExpression = $"LIS_TST_CD IN ('11023', '11024') AND JOB_GRUP IN ('HE6')";
+                    selectedRows = dsData.Tables[0].Select(filterExpression);
+                    if (selectedRows != null && selectedRows.Length > 0)
+                    {
+                        newTable = selectedRows.CopyToDataTable();
+                        filterExpression = $"SPC_CD IN ('A02','A04','A05') AND SPC_GBN = '{spcGbn}' AND TST_STAT_CD < '3060'";
+                        selectedRows = newTable.Select(filterExpression);
+                        if (selectedRows != null && selectedRows.Length > 0) { blnCompleteChkSpcCd = false; }
+                    }
+
                     //2024-12-17 : 9 번 검체구분자로 IM
                     if (spcGbn == "9")
                     {
