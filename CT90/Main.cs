@@ -5430,7 +5430,7 @@ namespace CT90
                         break;
                     }
                 }
-
+                
                 #region ----- 3-1. 오더에 따른 분류 (PBS 우선 분류)
                 if (dsData != null && dsData.Tables.Count > 0)
                 {
@@ -9055,14 +9055,18 @@ namespace CT90
 
                     if (blnDJ == true)
                     {
-                        if (lstJobGroupCd.Count >= 2 && lstJobGroupCd.Contains("HE1") == true && blnExistResultCDR == true)
-                        {
-                            //pass
-                        }
-                        else
-                        {
-                            strSortIndex = "5";
-                        }
+                        //if (lstJobGroupCd.Count >= 2 && lstJobGroupCd.Contains("HE1") == true && blnExistResultCDR == true)
+                        //{
+                        //    //pass
+                        //}
+                        //else
+                        //{
+                        //    strSortIndex = "5";
+                        //}
+
+                        //2025-11-18-LSH : CBC + 혈액학오더1개 + 서울인 경우 4번으로 분류되어 주석함.
+                         strSortIndex = "5";
+
                     }
 
                     if (_dctSortInfo.ContainsKey(strSortIndex) == true) { strSortDesc = _dctSortInfo[strSortIndex]; }
