@@ -8616,6 +8616,9 @@ namespace CT90
                         if (strSortIndex == "" && lstJobGroupCd.Contains("HE1") == true && lstJobGroupCd.Contains("HE3") == true && lstJobGroupCd.Contains("HE6") == true) { strSortIndex = "11"; }
                         if (strSortIndex == "" && lstJobGroupCd.Contains("HE2") == true && lstJobGroupCd.Contains("HE4") == true && lstJobGroupCd.Contains("HE6") == false) { strSortIndex = "20"; }
                         if (strSortIndex == "" && lstJobGroupCd.Contains("HE1") == true && lstJobGroupCd.Contains("HE6") == true) { strSortIndex = "12"; }
+                        //2026-03-11- LSH : HE1 + HE0 + HE9 조건 추가
+                        if (strSortIndex == "" && lstJobGroupCd.Count == 3 && lstJobGroupCd.Contains("HE1") == true && lstJobGroupCd.Contains("HE0") == true && lstJobGroupCd.Contains("HE9") == true) { strSortIndex = "14"; }
+
                         if (strSortIndex == "" && lstJobGroupCd.Contains("HE1") == true) { strSortIndex = "9"; }
                         if (strSortIndex == "" && lstJobGroupCd.Contains("HE1") == false) { strSortIndex = "10"; }
                         if (strSortIndex == "" && lstJobGroupCd.Contains("HE3") == true && lstJobGroupCd.Contains("HE6") == true && lstJobGroupCd.Contains("HE1") == false && lstJobGroupCd.Contains("HE2") == false && lstJobGroupCd.Contains("HEB") == false) { strSortIndex = "10"; }
