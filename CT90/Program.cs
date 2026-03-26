@@ -18,7 +18,7 @@ namespace CT90
             System.Threading.Mutex mut = new System.Threading.Mutex(false, Application.ProductName);
             bool running = !mut.WaitOne(0, false);
 
-            running = false;
+            //running = false;
 
             if (running)
             {
@@ -29,6 +29,9 @@ namespace CT90
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Main());
+
+                GC.KeepAlive(mut); 
+
             }
         }
     }
